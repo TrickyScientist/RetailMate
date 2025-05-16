@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - RetailMate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Welcome Back</h2>
+    
+    <form id="loginForm" class="space-y-4">
+      <input type="email" id="email" placeholder="Email Address" required
+             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+
+      <input type="password" id="password" placeholder="Password" required
+             class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+
+      <div class="flex justify-between text-sm">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2" /> Remember me
+        </label>
+        <a href="#" class="text-indigo-600 hover:underline">Forgot Password?</a>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+        Log In
+      </button>
+    </form>
+
+    <p class="mt-4 text-center text-sm text-gray-600">
+      Don't have an account?
+      <a href="register.html" class="text-indigo-600 hover:underline">Register</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (!email || !password) {
+        alert('Please enter both email and password.');
+        return;
+      }
+
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user && email === user.email) {
+        // Dummy login logic
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Invalid credentials. Please try again or register.');
+      }
+    });
+  </script>
+</body>
+</html>

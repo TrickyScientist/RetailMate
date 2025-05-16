@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suppliers - RetailMate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen">
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+         class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:translate-x-0 -translate-x-full">
+    <div class="flex items-center justify-between p-4 border-b">
+      <h1 class="text-xl font-bold text-indigo-600">RetailMate</h1>
+      <button id="closeSidebar" class="md:hidden text-gray-500 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mt-4 px-2 space-y-1">
+      <a href="dashboard.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Dashboard
+      </a>
+      <a href="billing.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+        Billing
+      </a>
+      <a href="inventory.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+        </svg>
+        Inventory
+      </a>
+      <a href="products.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10" />
+        </svg>
+        Products
+      </a>
+      <a href="customers.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+        Customers
+      </a>
+      <a href="#" class="flex items-center px-4 py-3 rounded-lg bg-indigo-100 text-indigo-700 font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        Suppliers
+      </a>
+      <a href="reports.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2M9 13h10" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5h6" />
+        </svg>
+        Reports
+      </a>
+      <a href="settings.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        Settings
+      </a>
+      <a href="report.html" class="flex items-center px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 7h6m-3 3v6m-3-12h6a3 3 0 013 3v6a3 3 0 01-3 3H9a3 3 0 01-3-3V9a3 3 0 013-3z" />
+        </svg>
+        Report Bug / Feedback
+      </a>
+      <a href="login.html" class="flex items-center px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 mt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg>
+        Logout
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Overlay for mobile sidebar -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"></div>
+
+  <!-- Main Content -->
+  <div class="flex-1 md:ml-64">
+    <!-- Top Navbar -->
+    <header class="bg-white shadow-sm h-16 flex items-center justify-between px-4">
+      <button id="toggleSidebar" class="text-gray-700 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div class="text-sm text-gray-600">Welcome back, <span class="font-medium">John Doe</span></div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="p-6 max-w-7xl mx-auto space-y-6">
+      <h1 class="text-2xl font-bold text-gray-800">Supplier Management</h1>
+
+      <!-- Add New Supplier -->
+      <section class="bg-white p-6 rounded-lg shadow mb-8">
+        <h2 class="text-lg font-semibold mb-4">Add New Supplier</h2>
+        <form id="addSupplierForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" id="supplierName" placeholder="Supplier Name" required class="px-4 py-2 border rounded focus:ring-2 focus:ring-indigo-500" />
+
+          <input type="text" id="supplierId" placeholder="Supplier ID (auto-generated)" readonly class="bg-gray-100 px-4 py-2 border rounded" />
+
+          <input type="email" id="supplierEmail" placeholder="Email Address" required class="px-4 py-2 border rounded focus:ring-2 focus:ring-indigo-500" />
+
+          <input type="tel" id="supplierPhone" placeholder="Phone Number" required class="px-4 py-2 border rounded focus:ring-2 focus:ring-indigo-500" />
+
+          <select id="supplierCategory" required class="px-4 py-2 border rounded focus:ring-2 focus:ring-indigo-500">
+            <option value="">Select Category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Pharmaceuticals">Pharmaceuticals</option>
+          </select>
+
+          <textarea id="supplierAddress" placeholder="Address" rows="2" class="col-span-1 md:col-span-2 px-4 py-2 border rounded resize-none focus:ring-2 focus:ring-indigo-500"></textarea>
+
+          <button type="submit" class="col-span-1 md:col-span-2 bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">
+            Add Supplier
+          </button>
+        </form>
+      </section>
+
+      <!-- Suppliers Table -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-lg font-semibold mb-4">Supplier List</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full table-auto">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="py-2 px-4 text-left">Supplier ID</th>
+                <th class="py-2 px-4 text-left">Name</th>
+                <th class="py-2 px-4 text-left">Email</th>
+                <th class="py-2 px-4 text-left">Phone</th>
+                <th class="py-2 px-4 text-left">Category</th>
+                <th class="py-2 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="supplierList">
+              <!-- JS Injected Rows -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- View Supplied Products Modal -->
+  <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 overflow-auto max-h-[80vh]">
+      <h3 class="text-lg font-semibold mb-4">Supplied Products</h3>
+      <ul id="productList" class="space-y-2 text-sm"></ul>
+      <div class="mt-4 flex justify-end">
+        <button id="closeProductModal" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    const form = document.getElementById('addSupplierForm');
+    const supplierIdInput = document.getElementById('supplierId');
+    const supplierList = document.getElementById('supplierList');
+
+    // Generate supplier ID
+    function generateSupplierId() {
+      return 'SUPP-' + Math.floor(Math.random() * 100000);
+    }
+
+    // Load existing suppliers on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      supplierIdInput.value = generateSupplierId();
+      loadSuppliers();
+    });
+
+    // Add supplier
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const supplier = {
+        id: supplierIdInput.value,
+        name: document.getElementById('supplierName').value.trim(),
+        email: document.getElementById('supplierEmail').value.trim(),
+        phone: document.getElementById('supplierPhone').value.trim(),
+        category: document.getElementById('supplierCategory').value,
+        address: document.getElementById('supplierAddress').value.trim()
+      };
+
+      let suppliers = JSON.parse(localStorage.getItem('suppliers')) || [];
+      suppliers.push(supplier);
+      localStorage.setItem('suppliers', JSON.stringify(suppliers));
+
+      form.reset();
+      supplierIdInput.value = generateSupplierId();
+      loadSuppliers();
+    });
+
+    // Load suppliers from localStorage
+    function loadSuppliers() {
+      const suppliers = JSON.parse(localStorage.getItem('suppliers')) || [];
+      supplierList.innerHTML = '';
+      suppliers.forEach((supp, index) => {
+        const tr = document.createElement('tr');
+        tr.className = 'border-b';
+        tr.innerHTML = `
+          <td class="py-2 px-4">${supp.id}</td>
+          <td class="py-2 px-4">${supp.name}</td>
+          <td class="py-2 px-4">${supp.email}</td>
+          <td class="py-2 px-4">${supp.phone}</td>
+          <td class="py-2 px-4">${supp.category}</td>
+          <td class="py-2 px-4 text-right space-x-2">
+            <button class="text-blue-500 hover:text-blue-700 edit-btn" data-index="${index}">Edit</button>
+            <button class="text-yellow-500 hover:text-yellow-700 view-products" data-index="${index}">View Products</button>
+            <button class="text-red-500 hover:text-red-700 delete-btn" data-index="${index}">Delete</button>
+          </td>
+        `;
+        supplierList.appendChild(tr);
+      });
+
+      attachEventListeners();
+    }
+
+    function attachEventListeners() {
+      // Delete button
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = btn.dataset.index;
+          let suppliers = JSON.parse(localStorage.getItem('suppliers'));
+          suppliers.splice(index, 1);
+          localStorage.setItem('suppliers', JSON.stringify(suppliers));
+          loadSuppliers();
+        });
+      });
+
+      // View products
+      document.querySelectorAll('.view-products').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = btn.dataset.index;
+          const supplier = JSON.parse(localStorage.getItem('suppliers'))[index];
+
+          // Dummy product list based on category
+          const sampleProducts = {
+            Electronics: ['Smartphones', 'Laptops', 'Headphones'],
+            Grocery: ['Rice', 'Vegetables', 'Dairy'],
+            Clothing: ['T-Shirts', 'Jeans', 'Shirts'],
+            Furniture: ['Chairs', 'Tables', 'Sofas'],
+            Pharmaceuticals: ['Paracetamol', 'Antibiotics', 'Multivitamins']
+          };
+
+          const products = sampleProducts[supplier.category] || ['Generic Product A', 'Product B', 'Item C'];
+
+          const modal = document.getElementById('productModal');
+          const productListDiv = document.getElementById('productList');
+          productListDiv.innerHTML = '';
+
+          products.forEach(product => {
+            const li = document.createElement('li');
+            li.className = 'p-2 border-b last:border-b-0';
+            li.textContent = product;
+            productListDiv.appendChild(li);
+          });
+
+          modal.classList.remove('hidden');
+        });
+      });
+
+      // Close product modal
+      document.getElementById('closeProductModal').addEventListener('click', () => {
+        document.getElementById('productModal').classList.add('hidden');
+      });
+    }
+
+    // Toggle sidebar
+    document.getElementById('toggleSidebar').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('-translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    });
+
+    document.getElementById('overlay').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.add('-translate-x-full');
+      document.getElementById('overlay').classList.add('hidden');
+    });
+
+    document.getElementById('closeSidebar').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.add('-translate-x-full');
+      document.getElementById('overlay').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
